@@ -26,8 +26,8 @@ public class TeamController {
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public List<TeamDto> getAll(@RequestParam(required=false) Integer limit, 
-			@RequestParam(required=false) Integer offset) {
-		return teamService.getAll(limit,offset);
+			@RequestParam(required=false) Integer page) {
+		return teamService.getAll(limit,page);
 	}
 	
 	

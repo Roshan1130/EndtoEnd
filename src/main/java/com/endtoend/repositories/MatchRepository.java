@@ -1,37 +1,31 @@
 package com.endtoend.repositories;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.endtoend.entities.PlayerEntity;
-import com.endtoend.entities.TeamEntity;
+import com.endtoend.entities.MatchEntity;
 
 @Repository
 @Transactional
-public class PlayerRepository {
+public class MatchRepository {
 
 	private EntityManager em;
-	
-	public void savePlayer(PlayerEntity playerEntity) {
-		em.persist(playerEntity);
+
+	public void saveMatch( MatchEntity match) {
+		System.out.println(match.toString());
+		em.persist(match);
 	}
-	
-	
 	
 	public EntityManager getEm() {
 		return em;
 	}
-
+	
 	@PersistenceContext
 	public void setEm(EntityManager em) {
 		this.em = em;
 	}
-	
-	
+		
 }

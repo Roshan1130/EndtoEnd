@@ -25,14 +25,15 @@ public class TeamService {
 		return convert(te);
 	}
 
-	public List<TeamDto> getAll(Integer limit, Integer offset) {
-		List<TeamEntity> teams = teamRepository.getAll(limit,offset);
+	public List<TeamDto> getAll(Integer limit, Integer page) {
+		List<TeamEntity> teams = teamRepository.getAll(limit,page);
 		List<TeamDto> returnList = new ArrayList<TeamDto>();
 		for (TeamEntity te : teams) {
 			returnList.add(convert(te));
 		}
 		return returnList;
 	}
+	
 
 	public TeamDto convert(TeamEntity te) {
 		TeamDto td = null;
@@ -45,4 +46,8 @@ public class TeamService {
 		}
 		return td;
 	}
+	
+	
+	
+	
 }

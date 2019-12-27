@@ -20,10 +20,15 @@ public class PlayerController{
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public void addPlayer(@RequestBody PlayerDto playerDto, 
 			@RequestParam Integer teamId) throws Exception {
-		
-		System.out.println("inside controller");
 		playerService.addPlayer(playerDto, teamId);
-		
 	}
+	
+	@RequestMapping(value="", method=RequestMethod.GET)
+	public PlayerDto getPlayers(@RequestParam Integer teamId){
+		
+		return playerService.getPlayers(teamId);
+	}
+	
+	
 
 }

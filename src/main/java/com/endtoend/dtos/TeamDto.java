@@ -1,5 +1,7 @@
 package com.endtoend.dtos;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,6 +13,14 @@ public class TeamDto {
 	private String manager;
 	private String logo;
 	
+	private List<PlayerDto> players;
+	
+	public List<PlayerDto> getPlayers() {
+		return players;
+	}
+	public void setPlayers(List<PlayerDto> players) {
+		this.players = players;
+	}
 	//getters-setters
 	public Integer getId() {
 		return id;

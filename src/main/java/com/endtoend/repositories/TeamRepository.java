@@ -35,6 +35,20 @@ public class TeamRepository {
 		return em.find(TeamEntity.class, teamId);
 	}
 	
+	@Transactional
+	public List<TeamEntity> getTeamByTeamId(Integer teamId) {
+		Query q = em.createQuery("FROM TeamEntity where id = :t");
+		q.setParameter("t", teamId);
+		return  (List<TeamEntity>) q.getSingleResult();
+	}
+	
+	@Transactional
+	public TeamEntity findTeamByTeamName(String teamName) {
+		Query q = em.createQuery("FROM TeamEntity t where t.name = :t");
+		q.setParameter("t", teamName);
+		return (TeamEntity) q.getSingleResult();
+	}
+	
 	public EntityManager getEm() {
 		return em;
 	}    

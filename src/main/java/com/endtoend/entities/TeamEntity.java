@@ -1,12 +1,14 @@
 package com.endtoend.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +35,12 @@ public class TeamEntity {
 
 	@Column(name="updated_at")
 	private Date updatedAt;
+	
+	@OneToMany(mappedBy = "aTeam")
+	private List<MatchEntity> aMatch;
+	
+	@OneToMany(mappedBy = "hTeam")
+	private List<MatchEntity> hMatch;
 
 	public Integer getId() {
 		return id;
