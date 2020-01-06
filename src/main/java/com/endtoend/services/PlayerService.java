@@ -42,7 +42,7 @@ public class PlayerService {
 		TeamEntity team = teamRepository.getById(teamId);
 		
 		List<PlayerDto> returnList = new ArrayList<PlayerDto>();
-		TeamEntity team = teams.get(0); // we get only one team
+		TeamEntity team1 = teams.get(0); // we get only one team
 		
 		TeamDto td = ts.convert(team);
 		
